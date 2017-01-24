@@ -143,6 +143,7 @@ app.get('/uploadImage', UploadImage.index);
 app.post('/upload', passportConfig.isAuthenticated, UploadImage.NewUpload);
 app.get('/categories', categories.index);
 app.get('/pricing', pricing.index);
+app.get('/editPricing', pricing.index);
 app.get('/addNewPrice', pricing.addNewPrice);
 
 /**

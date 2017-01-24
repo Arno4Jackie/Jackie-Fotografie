@@ -14,6 +14,19 @@ exports.index = (req, res) => {
         if (err) throw err;
         priceList = doc;
 
+        res.render('viewPricing', {
+            title: 'Pricing',
+            imgUrl: 'background/' + getMostRecentFileName(),
+            priceList: priceList
+        });
+    });
+}
+
+exports.editPrice = (req, res) => {
+    Pricing.find().exec(function(err, doc) {
+        if (err) throw err;
+        priceList = doc;
+
         res.render('pricing', {
             title: 'Pricing',
             imgUrl: 'background/' + getMostRecentFileName(),
@@ -21,6 +34,7 @@ exports.index = (req, res) => {
         });
     });
 }
+
 
 exports.addNewPrice = (req, res) => {
     var imgUrl;
