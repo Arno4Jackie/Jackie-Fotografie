@@ -4,18 +4,27 @@
  */
 var express = require('express');
 var app = express();
-var photoCollection = require('../models/photoCollection');
+var fs = require('fs');
+var _ = require('underscore');
+var path = require('path');
 
 exports.index = (req, res) => {
-    var imgUrl;
-    photoCollection.findOne({
-        isMainImage: true
-    }).exec(function(err, doc) {
-        if (err) throw err;
-        imgUrl = doc.url;
-        res.render('categories', {
-            title: 'Edit Categories',
-            imgUrl: imgUrl
-        });
+    res.render('categories', {
+        title: 'Edit Categories',
+        imgUrl: 'background/' + getMostRecentFileName()
+    });
+}
+
+function getMostRecentFileName() {
+    var dir = 'public/background';
+    var files = fs.readdirSync(dir);
+
+    // use underscore for max()
+    return _.max(files, function(f) {
+        var fullpath = path.join(dir, f);
+
+        // ctime = creation time is used
+        // replace with mtime for modification time
+        return fs.statSync(fullpath).ctime;
     });
 }

@@ -3,7 +3,9 @@ const crypto = require('crypto');
 const nodemailer = require('nodemailer');
 const passport = require('passport');
 const User = require('../models/User');
-var photoCollection = require('../models/photoCollection');
+var fs = require('fs');
+var _ = require('underscore');
+var path = require('path');
 
 /**
  * GET /login
@@ -15,16 +17,25 @@ exports.getLogin = (req, res) => {
     if (req.user) {
         return res.redirect('/');
     }
-    photoCollection.findOne({
-        isMainImage: true
-    }).exec(function(err, doc) {
-        if (err) throw err;
-        var imgUrl = doc.url;
-        res.render('account/login', {
-            title: 'Login'
-        });
+    res.render('account/login', {
+        title: 'Login',
+        imgUrl: 'background/' + getMostRecentFileName()
     });
 };
+
+function getMostRecentFileName() {
+    var dir = 'public/background';
+    var files = fs.readdirSync(dir);
+
+    // use underscore for max()
+    return _.max(files, function(f) {
+        var fullpath = path.join(dir, f);
+
+        // ctime = creation time is used
+        // replace with mtime for modification time
+        return fs.statSync(fullpath).ctime;
+    });
+}
 
 /**
  * POST /login
