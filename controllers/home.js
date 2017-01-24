@@ -5,7 +5,6 @@
 var photoCollection = require('../models/photoCollection');
 
 exports.index = (req, res) => {
-    console.log('test');
     photoCollection.findOne({
         isMainImage: true
     }).exec(function(err, doc) {
