@@ -16,6 +16,7 @@ var request = require('request');
 var Category = require('../models/category');
 var util = require('util');
 var _ = require('underscore');
+var photoCollection = require('../models/photoCollection');
 
 // If modifying these scopes, delete your previously saved credentials
 // at ~/.credentials/drive-nodejs-quickstart.json
