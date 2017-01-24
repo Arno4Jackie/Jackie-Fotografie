@@ -2,7 +2,7 @@
  * GET /
  * Home page.
  */
-// var photoCollection = require('../models/photoCollection');
+var photoCollection = require('../models/photoCollection');
 
 exports.index = (req, res) => {
     console.log('test');
