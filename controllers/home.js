@@ -17,12 +17,4 @@ exports.index = (req, res) => {
             imgUrl: imgUrl
         });
     });
-
-    // res.render('home', {
-    //     title: 'Jackie Fotografie',
-    //     imgUrl: 'https://docs.google.com/uc?id=0BydPt840pObUNG53dXd6M1BZQm8&amp;export=download'
-    // });
 };
-
-
-// (background=imgUrl, style="background-size:cover;")
