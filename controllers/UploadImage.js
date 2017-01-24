@@ -26,6 +26,10 @@ var TOKEN_PATH = TOKEN_DIR + 'drive-nodejs-quickstart.json';
 var categoryList;
 
 exports.index = (req, res) => {
+    if (!req.user) {
+        return res.redirect('/');
+    }
+
     Category.find().exec(function(err, doc) {
         if (err) throw err;
         categoryList = doc;
