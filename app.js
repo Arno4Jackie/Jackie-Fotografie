@@ -57,7 +57,8 @@ const app = express();
  */
 mongoose.Promise = global.Promise;
 //mongoose.connect('mongodb://127.0.0.1/jackie-fotografie');
-mongoose.connect('mongodb://arno4jackie:1ndestruc#@ds117199.mlab.com:17199/heroku_qxkwtgcf');
+// mongoose.connect('mongodb://arno4jackie:1ndestruc#@ds117199.mlab.com:17199/heroku_qxkwtgcf');
+mongoose.connect('mongodb://heroku_qxkwtgcf:k64in4ividiquipsukaqjdf1tm@ds117199.mlab.com:17199/heroku_qxkwtgcf');
 mongoose.connection.on('error', () => {
     console.log('%s MongoDB connection error. Please make sure MongoDB is running.', chalk.red('✗'));
     // process.exit();
