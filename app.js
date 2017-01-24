@@ -60,7 +60,7 @@ mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://127.0.0.1/jackie-fotografie');
 mongoose.connection.on('error', () => {
     console.log('%s MongoDB connection error. Please make sure MongoDB is running.', chalk.red('✗'));
-    process.exit();
+    // process.exit();
 });
 
 /**
