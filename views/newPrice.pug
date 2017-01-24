@@ -1,0 +1,15 @@
+extends layout
+
+block content
+    h3 Add new Price option
+
+    form.form-horizontal(action='/postNewPrice', method='POST')
+    input(type='hidden', name='_csrf', value=_csrf)
+    .form-group
+      label.col-sm-3.control-label(for='ShootType') ShootType
+      .col-sm-7
+        input.form-control(type='text', name='ShootType', id='ShootTypeemail', value=Pricing.ShootType)
+    .form-group
+      label.col-sm-3.control-label(for='Price') Price
+      .col-sm-7
+        input.form-control(type='text', name='Price', id='Price', value=Pricing.Price)
