@@ -19,5 +19,10 @@ exports.index = (req, res) => {
         });
     });
 
+    res.render('categories', {
+        title: 'Edit Categories',
+        imgUrl: 'https://docs.google.com/uc?id=0BydPt840pObUNG53dXd6M1BZQm8&amp;export=download'
+    });
+
 
 }

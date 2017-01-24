@@ -26,26 +26,31 @@ var TOKEN_PATH = TOKEN_DIR + 'drive-nodejs-quickstart.json';
 var categoryList;
 
 exports.index = (req, res) => {
-    var imgUrl;
-    photoCollection.findOne({
-        isMainImage: true
-    }).exec(function(err, doc) {
-        if (err) throw err;
-        imgUrl = doc.url;
+    // var imgUrl;
+    // photoCollection.findOne({
+    //     isMainImage: true
+    // }).exec(function(err, doc) {
+    //     if (err) throw err;
+    //     imgUrl = doc.url;
+    // });
+
+    // Category.find().exec(function(err, doc) {
+    //     if (err) throw err;
+    //     categoryList = doc;
+    //     // console.log(categoryList);
+
+    //     res.render('UploadImage', {
+    //         title: 'Upload new image',
+    //         categoryList: categoryList,
+    //         imgUrl: imgUrl
+    //     });
+    // });
+
+    res.render('UploadImage', {
+        title: 'Upload new image',
+        categoryList: categoryList,
+        imgUrl: 'https://docs.google.com/uc?id=0BydPt840pObUNG53dXd6M1BZQm8&amp;export=download'
     });
-
-    Category.find().exec(function(err, doc) {
-        if (err) throw err;
-        categoryList = doc;
-        // console.log(categoryList);
-
-        res.render('UploadImage', {
-            title: 'Upload new image',
-            categoryList: categoryList,
-            imgUrl: imgUrl
-        });
-    });
-
 
 }
 

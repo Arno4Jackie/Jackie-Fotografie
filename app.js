@@ -56,7 +56,7 @@ const app = express();
  * Connect to MongoDB.
  */
 mongoose.Promise = global.Promise;
-// mongoose.connect('mongodb://127.0.0.1/jackie-fotografie');
+//mongoose.connect('mongodb://127.0.0.1/jackie-fotografie');
 mongoose.connect('mongodb://arno4jackie:1ndestruc#@ds117199.mlab.com:17199/heroku_qxkwtgcf');
 mongoose.connection.on('error', () => {
     console.log('%s MongoDB connection error. Please make sure MongoDB is running.', chalk.red('✗'));
@@ -81,11 +81,7 @@ app.use(expressValidator());
 app.use(session({
     resave: true,
     saveUninitialized: true,
-    secret: process.env.SESSION_SECRET,
-    store: new MongoStore({
-        url: process.env.MONGODB_URI || process.env.MONGOLAB_URI,
-        autoReconnect: true
-    })
+    secret: process.env.SESSION_SECRET
 }));
 app.use(passport.initialize());
 app.use(passport.session());

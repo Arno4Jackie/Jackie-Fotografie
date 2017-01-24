@@ -14,7 +14,8 @@ const transporter = nodemailer.createTransport({
  */
 exports.getContact = (req, res) => {
     res.render('contact', {
-        title: 'Contact'
+        title: 'Contact',
+        imgUrl: 'https://docs.google.com/uc?id=0BydPt840pObUNG53dXd6M1BZQm8&amp;export=download'
     });
 };
 
