@@ -41,6 +41,7 @@ const adminController = require('./controllers/admin');
 const UploadImage = require('./controllers/UploadImage')
 const categories = require('./controllers/categories');
 const pricing = require('./controllers/pricing');
+const catelogue = require('./controllers/catelogue');
 
 /**
  * API keys and Passport configuration.
@@ -145,6 +146,7 @@ app.get('/categories', categories.index);
 app.get('/pricing', pricing.index);
 app.get('/editPricing', pricing.index);
 app.get('/addNewPrice', pricing.addNewPrice);
+app.get('/Catelogue', catelogue.index);
 
 /**
  * Error Handler.

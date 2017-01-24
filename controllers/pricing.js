@@ -1,7 +1,3 @@
-/**
- * GET /admin
- * Admin Page.
- */
 var express = require('express');
 var app = express();
 var Pricing = require('../models/pricing');
