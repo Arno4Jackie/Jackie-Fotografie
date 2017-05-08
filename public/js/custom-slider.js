@@ -4,6 +4,12 @@ document.getElementById('PricingImage').src = "Pricing/" + CurrentImage + ".jpg"
 document.getElementById('lblProgress').innerHTML = this.CurrentImage + ' of 8';
 disableButtons()
 
+var imgTest = document.getElementById('PricingImage');
+
+imgTest.addEventListener("load", function() {
+    document.getElementById('loaderModal').style.display = 'none';
+});
+
 async function PreviousImage() {
     disableIT(true);
     document.getElementById('loaderModal').style.display = 'block';
@@ -13,7 +19,7 @@ async function PreviousImage() {
         document.getElementById('PricingImage').src = "Pricing/" + this.CurrentImage + ".jpg";
         document.getElementById('lblProgress').innerHTML = this.CurrentImage + ' of 8';
     }
-    document.getElementById('loaderModal').style.display = 'none';
+
     disableIT(false);
     disableButtons();
 }
@@ -27,7 +33,6 @@ async function NextImage() {
         document.getElementById('PricingImage').src = "Pricing/" + this.CurrentImage + ".jpg";
         document.getElementById('lblProgress').innerHTML = this.CurrentImage + ' of 8';
     }
-    document.getElementById('loaderModal').style.display = 'none';
     disableIT(false);
     disableButtons();
 }
