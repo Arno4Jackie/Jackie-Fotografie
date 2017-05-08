@@ -18,6 +18,12 @@ exports.index = (req, res) => {
     });
 }
 
+exports.viewPricing = (req, res) => {
+    res.render('viewPricing', {
+        title: 'Pricing'
+    });
+}
+
 exports.editPrice = (req, res) => {
     Pricing.find().exec(function(err, doc) {
         if (err) throw err;

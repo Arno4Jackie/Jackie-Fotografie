@@ -57,8 +57,8 @@ const app = express();
  * Connect to MongoDB.
  */
 mongoose.Promise = global.Promise;
-//mongoose.connect('mongodb://127.0.0.1/jackie-fotografie');
-mongoose.connect('mongodb://heroku_qxkwtgcf:k64in4ividiquipsukaqjdf1tm@ds117199.mlab.com:17199/heroku_qxkwtgcf');
+mongoose.connect('mongodb://127.0.0.1/jackie-fotografie');
+// mongoose.connect('mongodb://heroku_qxkwtgcf:k64in4ividiquipsukaqjdf1tm@ds117199.mlab.com:17199/heroku_qxkwtgcf');
 mongoose.connection.on('error', () => {
     console.log('%s MongoDB connection error. Please make sure MongoDB is running.', chalk.red('✗'));
     // process.exit();
@@ -142,10 +142,10 @@ app.get('/admin', adminController.index);
 app.get('/uploadImage', UploadImage.index);
 app.post('/upload', passportConfig.isAuthenticated, UploadImage.NewUpload);
 app.get('/categories', categories.index);
-app.get('/pricing', pricing.index);
 app.get('/editPricing', pricing.index);
 app.get('/addNewPrice', pricing.addNewPrice);
 app.get('/Catelogue', catelogue.index);
+app.get('/viewprices', pricing.viewPricing);
 
 /**
  * Error Handler.
