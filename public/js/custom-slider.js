@@ -9,6 +9,7 @@ function PreviousImage() {
         this.CurrentImage--;
         document.getElementById('PricingImage').src = "Pricing/" + this.CurrentImage + ".jpg";
         disableButtons();
+        document.getElementById('lblProgress').innerHTML = this.CurrentImage + ' of 8';
         document.getElementById('loaderModal').style.display = 'none';
     }
 }
@@ -19,6 +20,7 @@ function NextImage() {
         this.CurrentImage++;
         document.getElementById('PricingImage').src = "Pricing/" + this.CurrentImage + ".jpg";
         disableButtons();
+        document.getElementById('lblProgress').innerHTML = this.CurrentImage + ' of 8';
         document.getElementById('loaderModal').style.display = 'none';
     }
 
