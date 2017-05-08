@@ -1,40 +1,17 @@
 extends layout
 
 block content
-    #sliderFrame
+    #sliderFrame(style="background: transparent;")
+      button#btnPrev.btn(onclick='PreviousImage()', style='width:100px') Previous
+      |  
+      button#btnNext.btn(onclick='NextImage()', style='width:100px;') Next
+      br
+      br
       #slider
-        img(src='Pricing/1.jpg')
-        |  
-        img(src='Pricing/2.jpg')
-        |  
-        img(src='Pricing/3.jpg')
-        |  
-        img(src='Pricing/4.jpg')
-        |  
-        img(src='Pricing/5.jpg')
-        |  
-        img(src='Pricing/6.jpg')
-        |  
-        img(src='Pricing/7.jpg')
-        |  
-        img(src='Pricing/8.jpg')
-      .group1-Wrapper
-        a.group1-Prev(onclick='imageSlider.previous()')
-        a.group1-Next(onclick='imageSlider.next()')
+        img#PricingImage(src='')
       div(style='text-align:center;padding:20px;z-index:20;')
-        a.group2-Prev(onclick='imageSlider.previous()')
-        a#auto(onclick='switchAutoAdvance()')
-        a.group2-Next(onclick='imageSlider.next()')
-    script(type='text/javascript').
-      //The following script is for the group 2 navigation buttons.
-      function switchAutoAdvance() {
-      imageSlider.switchAuto();
-      switchPlayPauseClass();
-      }
-      function switchPlayPauseClass() {
-      var auto = document.getElementById('auto');
-      var isAutoPlay = imageSlider.getAuto();
-      auto.className = isAutoPlay ? "group2-Pause" : "group2-Play";
-      auto.title = isAutoPlay ? "Pause" : "Play";
-      }
-      switchPlayPauseClass();
+        a.group2-Prev(onclick='PreviousImage()')
+        a#auto(onclick='PausePlay())')
+        a.group2-Next(onclick='NextImage()')
+
+    script(src='/js/custom-slider.js', type='text/javascript')        

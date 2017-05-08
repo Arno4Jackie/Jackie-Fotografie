@@ -8,7 +8,7 @@
 #sliderFrame {
     position: relative;
     background-color: white;
-    margin: 10%;
+    margin: 5%;
 }
 
 #slider,
@@ -175,4 +175,27 @@ a.group2-Next:hover {
 
 a.group2-Prev:hover {
     background-position: 20px -60px;
+}
+
+button:disabled {
+    background: #dddddd;
+    opacity: 0.50;
+}
+
+.btn:hover,
+.btn:active {
+    background-color: rgb(0, 184, 186);
+    border: 1px solid transparent;
+    color: rgb(255, 255, 255);
+    outline: medium none;
+    padding: 6px 26px;
+}
+
+.btn {
+    background-color: transparent;
+    border: 1px solid rgb(0, 184, 186);
+    color: rgb(0, 184, 186);
+    outline: medium none;
+    border-radius: 0;
+    padding: 6px 26px;
 }
