@@ -4,7 +4,7 @@ document.getElementById('PricingImage').src = "Pricing/" + CurrentImage + ".jpg"
 document.getElementById('lblProgress').innerHTML = this.CurrentImage + ' of 8';
 disableButtons()
 
-function PreviousImage() {
+async function PreviousImage() {
     disableIT(true);
     document.getElementById('loaderModal').style.display = 'block';
     if (parseInt(this.CurrentImage) > 1) {
@@ -18,7 +18,7 @@ function PreviousImage() {
     disableButtons();
 }
 
-function NextImage() {
+async function NextImage() {
     disableIT(true);
     document.getElementById('loaderModal').style.display = 'block';
     if (parseInt(this.CurrentImage) < 8) {
