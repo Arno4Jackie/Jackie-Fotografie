@@ -186,14 +186,14 @@ button:disabled {
 .btn:active {
     background-color: rgb(0, 184, 186);
     border: 1px solid transparent;
-    color: rgb(255, 255, 255);
+    color: yellow;
     outline: medium none;
     padding: 6px 26px;
 }
 
 .btn {
-    background-color: transparent;
-    border: 1px solid rgb(0, 184, 186);
+    background-color: rgb(0, 184, 186);
+    border: 1px solid lime;
     color: rgb(0, 184, 186);
     outline: medium none;
     border-radius: 0;
