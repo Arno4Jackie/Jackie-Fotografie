@@ -238,7 +238,6 @@ button:disabled {
 #loaderModal {
     overflow-y: hidden;
     background-color: black;
-    z-index: 500;
     opacity: 0.75;
 }
 
