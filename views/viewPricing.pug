@@ -14,4 +14,10 @@ block content
         a#auto(onclick='PausePlay())')
         a.group2-Next(onclick='NextImage()')
 
-    script(src='/js/custom-slider.js', type='text/javascript')        
+    #loaderModal.modal.fade
+      .modal-dialog
+        .modal-content
+          .modal-body
+            p(style='text-align:center;')
+              img(src='loader.gif', alt='loading...', title='loading...')   
+    script(src='/js/custom-slider.js', type='text/javascript')     

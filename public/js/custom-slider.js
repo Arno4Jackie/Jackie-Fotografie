@@ -1,21 +1,27 @@
 var CurrentImage = 1;
+document.getElementById('loaderModal').style.display = 'block';
 
 document.getElementById('PricingImage').src = "Pricing/" + CurrentImage + ".jpg";
 disableButtons()
+document.getElementById('loaderModal').style.display = 'none';
 
 function PreviousImage() {
     if (parseInt(this.CurrentImage) > 1) {
+        document.getElementById('loaderModal').style.display = 'block';
         this.CurrentImage--;
         document.getElementById('PricingImage').src = "Pricing/" + this.CurrentImage + ".jpg";
         disableButtons();
+        document.getElementById('loaderModal').style.display = 'none';
     }
 }
 
 function NextImage() {
     if (parseInt(this.CurrentImage) < 8) {
+        document.getElementById('loaderModal').style.display = 'block';
         this.CurrentImage++;
         document.getElementById('PricingImage').src = "Pricing/" + this.CurrentImage + ".jpg";
         disableButtons();
+        document.getElementById('loaderModal').style.display = 'none';
     }
 
 }
