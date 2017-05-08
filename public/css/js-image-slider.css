@@ -199,3 +199,29 @@ button:disabled {
     border-radius: 0;
     padding: 6px 26px;
 }
+
+@media only screen and (max-device-width: 600px) {
+    .btn:hover,
+    .btn:active {
+        background-color: grey;
+        border: 1px solid transparent;
+        color: red;
+        outline: medium none;
+        padding: 6px 26px;
+    }
+    .btn {
+        background-color: grey;
+        border: 1px solid lime;
+        color: white;
+        outline: medium none;
+        border-radius: 0;
+        padding: 6px 26px;
+    }
+}
+
+
+/* mobile only styles when the device is 0-600px in maximum width */
+
+@media only screen and (max-device-width: 1000px) {
+    ...
+}
