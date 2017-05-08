@@ -43,6 +43,13 @@ const categories = require('./controllers/categories');
 const pricing = require('./controllers/pricing');
 const catelogue = require('./controllers/catelogue');
 
+
+var airbrake = require('airbrake').createClient(
+    '143039', // Project ID
+    'ad8d21cb27de87b11535776b9e5ad29b' // Project key
+);
+airbrake.handleExceptions();
+
 /**
  * API keys and Passport configuration.
  */
