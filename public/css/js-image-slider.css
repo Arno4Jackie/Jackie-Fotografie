@@ -221,4 +221,6 @@ button:disabled {
 
 .HomeContent {
     border-radius: 25px;
+    color: white;
+    padding: 20px;
 }
