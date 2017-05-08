@@ -289,3 +289,14 @@ button:disabled {
     overflow: hidden;
     border-radius: 1px;
 }
+
+#lblProgress {
+    margin-left: 5%;
+    background-color: grey;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    border-radius: 50%;
+    color: lime;
+}
