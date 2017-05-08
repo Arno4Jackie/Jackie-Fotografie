@@ -20,7 +20,8 @@ exports.index = (req, res) => {
 
 exports.viewPricing = (req, res) => {
     res.render('viewPricing', {
-        title: 'Pricing'
+        title: 'Pricing',
+        imgUrl: 'background/' + getMostRecentFileName()
     });
 }
 
