@@ -219,9 +219,6 @@ button:disabled {
     }
 }
 
-
-/* mobile only styles when the device is 0-600px in maximum width */
-
-@media only screen and (max-device-width: 1000px) {
-    ...
+.HomeContent {
+    border-radius: 25px;
 }
