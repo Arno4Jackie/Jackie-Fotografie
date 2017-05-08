@@ -8,7 +8,7 @@
 #sliderFrame {
     position: relative;
     background-color: white;
-    margin-top: 10%;
+    margin: 10%;
 }
 
 #slider,
@@ -63,7 +63,7 @@
 #slider a>b {
     position: absolute;
     border: none;
-    display: none;
+    display: block;
 }
 
 #slider .sliderInner {
