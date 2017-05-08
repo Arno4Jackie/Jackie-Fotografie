@@ -3,21 +3,7 @@ extends layout
 block content
     #sliderFrame
       #slider
-        img(src='Pricing/1.jpg')
-        |  
-        img(src='Pricing/2.jpg')
-        |  
-        img(src='Pricing/3.jpg')
-        |  
-        img(src='Pricing/4.jpg')
-        |  
-        img(src='Pricing/5.jpg')
-        |  
-        img(src='Pricing/6.jpg')
-        |  
-        img(src='Pricing/7.jpg')
-        |  
-        img(src='Pricing/8.jpg')
+        img#PricingImage
       .group1-Wrapper
         a.group1-Prev(onclick='imageSlider.previous()')
         a.group1-Next(onclick='imageSlider.next()')
@@ -25,16 +11,3 @@ block content
         a.group2-Prev(onclick='imageSlider.previous()')
         a#auto(onclick='switchAutoAdvance()')
         a.group2-Next(onclick='imageSlider.next()')
-    script(type='text/javascript').
-      //The following script is for the group 2 navigation buttons.
-      function switchAutoAdvance() {
-      imageSlider.switchAuto();
-      switchPlayPauseClass();
-      }
-      function switchPlayPauseClass() {
-      var auto = document.getElementById('auto');
-      var isAutoPlay = imageSlider.getAuto();
-      auto.className = isAutoPlay ? "group2-Pause" : "group2-Play";
-      auto.title = isAutoPlay ? "Pause" : "Play";
-      }
-      switchPlayPauseClass();
