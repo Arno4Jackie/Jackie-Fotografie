@@ -12584,3 +12584,7 @@ textarea {
 .fa {
     margin-right: 6px;
 }
+
+#fbcontainer *{
+	padding-left:15px;
+}
