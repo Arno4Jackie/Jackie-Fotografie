@@ -153,6 +153,7 @@ app.get('/editPricing', pricing.index);
 app.get('/addNewPrice', pricing.addNewPrice);
 app.get('/Catelogue', catelogue.index);
 app.get('/viewprices', pricing.viewPricing);
+app.get('/testFacebook', pricing.testFacebook);
 
 /**
  * Error Handler.

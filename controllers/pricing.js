@@ -25,6 +25,13 @@ exports.viewPricing = (req, res) => {
     });
 }
 
+exports.testFacebook = (req, res) => {
+    res.render('testFacebook', {
+        title: 'Testing Facebook Integration',
+        imgUrl: 'background/' + getMostRecentFileName()
+    });
+}
+
 exports.editPrice = (req, res) => {
     Pricing.find().exec(function(err, doc) {
         if (err) throw err;
